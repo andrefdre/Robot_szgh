@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
         - /RobotModel1
       Splitter Ratio: 0.5
     Tree Height: 719
@@ -90,7 +91,7 @@ Visualization Manager:
         link3:
           Value: true
       Marker Alpha: 1
-      Marker Scale: 3
+      Marker Scale: 1500
       Name: TF
       Show Arrows: true
       Show Axes: true
@@ -103,13 +104,12 @@ Visualization Manager:
                 {}
       Update Interval: 0
       Value: true
-    - Alpha: 0.4000000059604645
+    - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
       Links:
-        All Links Enabled:
-          {}
+        All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -118,14 +118,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         link1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         link2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         link3:
           Alpha: 1
           Show Axes: false
@@ -164,7 +167,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 9.431215286254883
+      Distance: 1981.4940185546875
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -172,17 +175,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 1.9854447841644287
-        Y: -0.21519038081169128
-        Z: 0.13009114563465118
+        X: 41.36336135864258
+        Y: 30.12053871154785
+        Z: 31.48103904724121
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.864795982837677
+      Pitch: 0.7197967767715454
       Target Frame: base_link
-      Yaw: 4.317204475402832
+      Yaw: 1.452211856842041
     Saved: ~
 Window Geometry:
   Displays:
