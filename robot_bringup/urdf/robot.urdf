@@ -1,7 +1,7 @@
 <robot name="test_robot">
     <link name="base_link" > 
         <visual>
-            <origin rpy="0 3.14 0" xyz="278 -278 276"/>
+            <origin rpy="1.57 0 0" xyz="0 0 0"/>
             <geometry>
               <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
             </geometry>
@@ -10,7 +10,7 @@
 
     <link name="link1" >
       <visual>
-        <origin rpy="0 0 1.57" xyz="400 -389 -100"/>
+        <origin rpy="1.57 0 1.57" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
         </geometry>
@@ -19,7 +19,7 @@
 
     <link name="link2" >
       <visual>
-        <origin rpy="3.14 0 0" xyz="-250 90 150"/>
+        <origin rpy="-1.57 0 1.57" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
         </geometry>
@@ -28,26 +28,25 @@
 
     <link name="link3" >
       <visual>
-        <origin rpy="1.57 0 0" xyz="-400 300 0"/>
+        <origin rpy="1.57 0 3.14" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
         </geometry>
       </visual>
-
     </link >
   
     <joint name="joint1" type="continuous">
       <parent link="base_link"/>
       <child link="link1"/>
       <axis xyz="0 0 1" />
-      <origin xyz="0 0 276" rpy="0 0 0" />
+      <origin xyz="0 0 264.5" rpy="0 0 0" />
     </joint>
   
     <joint name="joint2" type="continuous">
       <parent link="link1"/>
       <child link="link2"/>
       <axis xyz="0 0 1" />
-      <origin xyz="247 200 335" rpy="1.57 0 0" />
+      <origin xyz="247 168.02 332" rpy="1.57 0 0" />
     </joint>
   
     <joint name="joint3" type="continuous">
