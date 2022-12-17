@@ -4,14 +4,16 @@
   <arg name="color" default="Grey"/>
   <arg name="x_pos" default="0.0"/>
   <arg name="y_pos" default="0.0"/>
-  <arg name="z_pos" default="1"/>
+  <arg name="z_pos" default="0.1"/>
   <arg name="rviz" default="true"/>
 
   <param name="robot_description" command="$(find xacro)/xacro $(find robot_bringup)/urdf/robot.urdf name:=$(arg name) color:=$(arg color)"/>
 
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
 
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/rrbot/joint_states" />
+    </node>
 
 
 
@@ -28,6 +30,9 @@
 
 
   <!-- <arg name="rvizconfig" default="$(find robot_bringup)/config/rviz.rviz"/>
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/> -->
 
 </launch>
