@@ -1,4 +1,4 @@
-<robot name="test_robot">
+<robot name="robot">
     <link name="base_link" > 
         <visual>
             <origin rpy="1.57 0 0" xyz="0 0 0"/>
@@ -6,24 +6,54 @@
               <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
             </geometry>
           </visual>
+          <collision>
+            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <geometry>
+              <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
+            </geometry>
+          </collision>
+          <inertial>
+            <mass value="50000"/>
+            <inertia ixx="1000" ixy="0.0" ixz="0.0" iyy="1000" iyz="0.0" izz="1000"/>
+          </inertial>
     </link >
 
-    <link name="link1" >
+    <link name="link1">
       <visual>
         <origin rpy="1.57 0 1.57" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="1.57 0 1.57" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
 
     <link name="link2" >
       <visual>
-        <origin rpy="-1.57 0 1.57" xyz="0 0 0"/>
+        <origin rpy="-1.57 0 3.14" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="-1.57 0 3.14" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
 
     <link name="link3" >
@@ -33,9 +63,23 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="1.57 0 3.14" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
 
     <link name="link4_artificial" >
+      <inertial>
+        <mass value="10"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
 
     <link name="link4" >
@@ -45,6 +89,23 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="3.14 1.57 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
+    </link >
+
+    <link name="link5" >
+      <inertial>
+        <mass value="10"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
 
     <link name="link4_1" >
@@ -54,6 +115,16 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="3.14 1.57 0.261" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
     
     <link name="link4_2" >
@@ -63,9 +134,23 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="3.14 1.57 1.57" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
 
     <link name="link4_3_artificial" >
+      <inertial>
+        <mass value="10"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
 
     <link name="link4_3" >
@@ -75,6 +160,16 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_3.dae"/> 
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0.12" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_3.dae"/> 
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
     </link >
   
 
@@ -83,21 +178,21 @@
       <parent link="base_link"/>
       <child link="link1"/>
       <axis xyz="0 0 1" />
-      <origin xyz="0 0 264.5" rpy="0 0 0" />
+      <origin xyz="0 0 0.2645" rpy="0 0 0" />
     </joint>
   
     <joint name="joint2" type="continuous">
       <parent link="link1"/>
       <child link="link2"/>
       <axis xyz="0 0 1" />
-      <origin xyz="247 168.02 332" rpy="1.57 -1.57 0" />
+      <origin xyz="0.247 0.16802 0.332" rpy="1.57 0 0" />
     </joint>
   
     <joint name="joint3" type="continuous">
       <parent link="link2"/>
       <child link="link3"/>
       <axis xyz="0 0 1" />
-      <origin xyz="1100 0 0" rpy="0 0 -1.57" />
+      <origin xyz="0 1.100 0" rpy="0 0 0" />
     </joint>
 
     <joint name="joint4_artificial" type="continuous">
@@ -105,7 +200,7 @@
       <parent link="link3"/>
       <child link="link4_artificial"/>
       <axis xyz="0 0 1" />
-      <origin xyz="972.83 0 102.5" rpy="0 0 0" />
+      <origin xyz="0.97283 0 0.1025" rpy="0 0 0" />
     </joint>
 
     <joint name="joint4" type="continuous">
@@ -116,12 +211,19 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
+    <joint name="joint5" type="continuous">
+      <parent link="link4"/>
+      <child link="link5"/>
+      <axis xyz="0 0 1" />
+      <origin xyz="0.17227 -0.18953 0" rpy="1.57 0 0" />
+    </joint>
+
     <joint name="joint4_1" type="continuous">
       <mimic joint="joint2" multiplier="-1" offset="0" />
       <parent link="link1"/>
       <child link="link4_1"/>
       <axis xyz="0 0 1" />
-      <origin xyz="-84.21 61.92 376.87" rpy="-1.57 0.02 0" />
+      <origin xyz="-0.08421 0.06192 0.37687" rpy="-1.57 0.02 0" />
     </joint>
 
     <joint name="joint4_2" type="continuous">
@@ -129,7 +231,7 @@
       <parent link="link4_1"/>
       <child link="link4_2"/>
       <axis xyz="0 0 1" />
-      <origin xyz="10 -1100 -24.5" rpy="0 0 -0.15" />
+      <origin xyz="0.010 -1.100 -0.0245" rpy="0 0 -0.15" />
     </joint>
 
     <joint name="joint4_3_artificial" type="continuous">
@@ -137,7 +239,7 @@
       <parent link="link4_2"/>
       <child link="link4_3_artificial"/>
       <axis xyz="0 0 1" />
-      <origin xyz="583.29 0 -70" rpy="0 0 0" />
+      <origin xyz="0.58329 0 -0.070" rpy="0 0 0" />
     </joint>
 
     <joint name="joint4_3" type="continuous">
@@ -147,6 +249,17 @@
       <axis xyz="0 0 1" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
+
+    <!-- Transmission -->
+    <transmission name="base_link">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="$base_link_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="joint1">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+    </transmission>
 
 
   </robot>
