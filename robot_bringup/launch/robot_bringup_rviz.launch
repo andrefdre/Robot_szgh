@@ -2,7 +2,7 @@
     <arg name="name" default="robot"/>
     <arg name="color" default="Grey"/>
 
-    <param name="robot_description" command="$(find xacro)/xacro $(find robot_bringup)/urdf/robot.urdf name:=$(arg name) color:=$(arg color)"/>
+    <param name="robot_description" command="xacro --inorder $(find robot_bringup)/urdf/robot.urdf.xacro name:=$(arg name) color:=$(arg color)"/>
   
     <!-- send fake joint values -->
     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>

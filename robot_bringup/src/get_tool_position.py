@@ -18,11 +18,10 @@ def main():
 
     while not rospy.is_shutdown():
         try:
-            (trans,rot) = listener.lookupTransform('link5','base_link',rospy.Time(0))
+            (trans,rot) = listener.lookupTransform('base_link','link5',rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             continue
 
-        angles= euler_from_quaternion(rot)
         print ('translation: ',trans)
         angles = euler_from_quaternion(rot)
         print ('rotation: ',[(180.0/math.pi)*i for i in angles])

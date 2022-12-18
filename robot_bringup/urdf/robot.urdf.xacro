@@ -1,13 +1,17 @@
-<robot name="robot">
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+    <!-- <xacro:property name="pi" value="3.14" /> -->
+
     <link name="base_link" > 
         <visual>
-            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
               <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
             </geometry>
           </visual>
           <collision>
-            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
               <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
             </geometry>
@@ -21,13 +25,13 @@
 
     <link name="link1">
       <visual>
-        <origin rpy="1.57 0 1.57" xyz="0 0 0"/>
+        <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
         </geometry>
       </visual>
       <collision>
-        <origin rpy="1.57 0 1.57" xyz="0 0 0"/>
+        <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
         </geometry>
@@ -40,13 +44,13 @@
 
     <link name="link2" >
       <visual>
-        <origin rpy="-1.57 0 3.14" xyz="0 0 0"/>
+        <origin rpy="-${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
         </geometry>
       </visual>
       <collision>
-        <origin rpy="-1.57 0 3.14" xyz="0 0 0"/>
+        <origin rpy="-${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
         </geometry>
@@ -59,13 +63,13 @@
 
     <link name="link3" >
       <visual>
-        <origin rpy="1.57 0 3.14" xyz="0 0 0"/>
+        <origin rpy="${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
         </geometry>
       </visual>
       <collision>
-        <origin rpy="1.57 0 3.14" xyz="0 0 0"/>
+        <origin rpy="${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
         </geometry>
@@ -85,13 +89,13 @@
 
     <link name="link4" >
       <visual>
-        <origin rpy="3.14 1.57 0" xyz="0 0 0"/>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
         </geometry>
       </visual>
       <collision>
-        <origin rpy="3.14 1.57 0" xyz="0 0 0"/>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
         </geometry>
@@ -111,13 +115,13 @@
 
     <link name="link4_1" >
       <visual>
-        <origin rpy="3.14 1.57 0.261" xyz="0 0 0"/>
+        <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
         </geometry>
       </visual>
       <collision>
-        <origin rpy="3.14 1.57 0.261" xyz="0 0 0"/>
+        <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
         </geometry>
@@ -130,13 +134,13 @@
     
     <link name="link4_2" >
       <visual>
-        <origin rpy="3.14 1.57 1.57" xyz="0 0 0"/>
+        <origin rpy="${pi} ${pi/2} ${pi/2}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
         </geometry>
       </visual>
       <collision>
-        <origin rpy="3.14 1.57 1.57" xyz="0 0 0"/>
+        <origin rpy="${pi} ${pi/2} ${pi/2}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
         </geometry>
@@ -186,7 +190,7 @@
       <parent link="link1"/>
       <child link="link2"/>
       <axis xyz="0 0 1" />
-      <origin xyz="0.247 0.16802 0.332" rpy="1.57 0 0" />
+      <origin xyz="0.247 0.16802 0.332" rpy="${pi/2} 0 0" />
     </joint>
   
     <joint name="joint3" type="continuous">
@@ -216,7 +220,7 @@
       <parent link="link4"/>
       <child link="link5"/>
       <axis xyz="0 0 1" />
-      <origin xyz="0.17227 -0.18953 0" rpy="1.57 0 0" />
+      <origin xyz="0.17227 -0.18953 0" rpy="${pi/2} 0 0" />
     </joint>
 
     <joint name="joint4_1" type="continuous">
@@ -224,7 +228,7 @@
       <parent link="link1"/>
       <child link="link4_1"/>
       <axis xyz="0 0 1" />
-      <origin xyz="-0.08421 0.06192 0.37687" rpy="-1.57 0.02 0" />
+      <origin xyz="-0.08421 0.06192 0.37687" rpy="-${pi/2} 0.02 0" />
     </joint>
 
     <joint name="joint4_2" type="continuous">
