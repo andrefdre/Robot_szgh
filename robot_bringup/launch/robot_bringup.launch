@@ -4,18 +4,8 @@
   <arg name="color" default="Grey"/>
   <arg name="x_pos" default="0.0"/>
   <arg name="y_pos" default="0.0"/>
-  <arg name="z_pos" default="0.1"/>
+  <arg name="z_pos" default="0.5"/>
   <arg name="rviz" default="true"/>
-
-  <param name="robot_description" command="$(find xacro)/xacro $(find robot_bringup)/urdf/robot.urdf name:=$(arg name) color:=$(arg color)"/>
-
-  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
-
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-    <remap from="/joint_states" to="/rrbot/joint_states" />
-    </node>
-
-
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="false"/>
@@ -25,14 +15,25 @@
     <arg name="debug" value="false"/>
     <arg name="verbose" value="true"/>
 </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find robot_bringup)/urdf/robot.urdf.xacro name:=$(arg name) color:=$(arg color)"/>
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg name) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" output='screen' />
+
+  <rosparam file="$(find robot_bringup)/config/config.yaml" command="load"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="robot"
+  output="screen"
+  args="joint_state_controller
+        joint1_position_controller
+        joint2_position_controller
+        joint3_position_controller
+        joint4_position_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/robot/joint_states" />
+    </node>
   
- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg name) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" output='screen' />
-
-
-  <!-- <arg name="rvizconfig" default="$(find robot_bringup)/config/rviz.rviz"/>
-  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
-
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/> -->
+ 
 
 </launch>
