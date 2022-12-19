@@ -22,7 +22,6 @@
 
     <!-- <xacro:property name="pi" value="3.14" /> -->
     <link name="dummy_link" > 
-      
     </link >
 
     <link name="base_link" > 
@@ -35,20 +34,22 @@
           <collision>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
-              <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
-              <!-- <box size="0.3 0.3 0.3"/> -->
+              <!-- <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/>  -->
+              <box size="0.3 0.3 0.3"/>
             </geometry>
+          </collision>
+          <inertial>
+            <mass value="50000"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+          </inertial>
+          <surface>
             <friction>
               <ode>
                 <mu>100000.0</mu>
                 <mu2>100000.0</mu2>
               </ode>
             </friction>
-          </collision>
-          <inertial>
-            <mass value="50000"/>
-            <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
-          </inertial>
+            </surface>
             <selfCollide>false</selfCollide>
     </link >
 
@@ -59,15 +60,15 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
         </geometry>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
         </geometry>
-      </collision>
+      </collision> -->
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -79,15 +80,15 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
         </geometry>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin rpy="-${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
         </geometry>
-      </collision>
+      </collision> -->
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -99,15 +100,15 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
         </geometry>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin rpy="${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
         </geometry>
-      </collision>
+      </collision> -->
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -115,7 +116,7 @@
     <link name="link4_artificial" >
       <inertial>
         <mass value="10"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="0.0004" ixy="0.0" ixz="0.0" iyy="0.0004" iyz="0.0" izz="0.0002"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -127,15 +128,15 @@
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
         </geometry>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin rpy="${pi} ${pi/2} 0" xyz="0 0 0"/>
         <geometry>
           <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
         </geometry>
-      </collision>
+      </collision> -->
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -143,12 +144,12 @@
     <link name="link5" >
       <inertial>
         <mass value="10"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="0.004" ixy="0.0" ixz="0.0" iyy="0.004" iyz="0.0" izz="0.002"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
 
-    <!-- <link name="link4_1" >
+    <link name="link4_1" >
       <visual>
         <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
         <geometry>
@@ -211,7 +212,7 @@
         <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
       </inertial>
     </link >
-   -->
+  
 
     <!-- Joints Declaration -->
     <joint name="dummy_joint" type="fixed">
@@ -226,7 +227,6 @@
       <limit effort="100.0" lower="${-175*pi/180}" upper="${175*pi/180}" velocity="${60*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 0 0.2645" rpy="0 0 0" />
-      <dynamics damping="0.5" friction="0.0"/>
     </joint>
   
     <joint name="joint2" type="revolute">
@@ -235,7 +235,6 @@
       <limit effort="100.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0.21938 0.1675 0.332" rpy="${pi/2} 0 0" />
-      <dynamics damping="0.5" friction="0.0"/>
     </joint>
   
     <joint name="joint3" type="revolute">
@@ -244,7 +243,6 @@
       <limit effort="100.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 1.100 0" rpy="0 0 0" />
-      <dynamics damping="0.5" friction="0.0"/>
     </joint>
 
     <joint name="joint4_artificial" type="continuous">
@@ -265,7 +263,6 @@
       <child link="link4"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <dynamics damping="0.5" friction="0.0"/>
     </joint>
 
     <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
@@ -278,10 +275,9 @@
       <axis xyz="0 0 1" />
       <limit effort="1000.0" lower="${-360*pi/180}" upper="${360*pi/180}" velocity="${148*pi/180}"/>
       <origin xyz="0.1718 -0.18957 0" rpy="${pi/2} 0 0" />
-      <dynamics damping="0.5" friction="0.0"/>
     </joint>
 
-    <!-- <joint name="joint4_1" type="continuous">
+    <joint name="joint4_1" type="continuous">
       <mimic joint="joint2" multiplier="-1" offset="0" />
       <parent link="link1"/>
       <child link="link4_1"/>
@@ -311,7 +307,7 @@
       <child link="link4_3"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 0 0" rpy="0 0 0" />
-    </joint> -->
+    </joint>
 
     <!-- Transmission -->
     <gazebo>
