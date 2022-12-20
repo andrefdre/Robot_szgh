@@ -144,7 +144,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-André Cardoso - [@your_twitter](https://twitter.com/your_username) - email@example.com
+André Cardoso - (https://www.linkedin.com/in/andr%C3%A9-cardoso-8bb264223/) - andrefdre@gmail.com
 
 Project Link: [https://github.com/andrefdre/Robot_szgh](https://github.com/andrefdre/Robot_szgh)
 
