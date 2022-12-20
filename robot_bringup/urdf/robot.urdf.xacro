@@ -20,7 +20,7 @@
     </gazebo>
   </xacro:macro>
 
-    <xacro:property name="path" value="model://" />
+    <xacro:property name="path" value="model://robot_mesh" />
 
     <link name="dummy_link" > 
       
@@ -30,13 +30,13 @@
         <visual>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
-              <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
+              <mesh filename="${path}/base_link.dae"/> 
             </geometry>
           </visual>
           <collision>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
-              <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
+              <mesh filename="${path}/base_link.dae"/> 
               <!-- <box size="0.3 0.3 0.3"/> -->
             </geometry>
             <friction>
@@ -48,7 +48,7 @@
           </collision>
           <inertial>
             <mass value="50000"/>
-            <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+            <inertia ixx="750.000000" ixy="-0.000115" ixz="0.003024" iyy="1040.000000" iyz="-90.592690" izz="1040.000000"/>
           </inertial>
             <selfCollide>false</selfCollide>
     </link >
@@ -57,18 +57,18 @@
       <visual>
         <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
+          <mesh filename="${path}/link1.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
+          <mesh filename="${path}/link1.dae"/> 
         </geometry>
       </collision>
       <inertial>
-        <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <mass value="20000"/>
+        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="40"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -77,18 +77,18 @@
       <visual>
         <origin rpy="-${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
+          <mesh filename="${path}/link2.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="-${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
+          <mesh filename="${path}/link2.dae"/> 
         </geometry>
       </collision>
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="20" ixy="0.0" ixz="0.0" iyy="20" iyz="0.0" izz="20"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -97,18 +97,18 @@
       <visual>
         <origin rpy="${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
+          <mesh filename="${path}/link3.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
+          <mesh filename="${path}/link3.dae"/> 
         </geometry>
       </collision>
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="10" ixy="0.0" ixz="0.0" iyy="10" iyz="0.0" izz="10"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -116,7 +116,7 @@
     <link name="link4_artificial" >
       <inertial>
         <mass value="10"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -125,26 +125,26 @@
       <visual>
         <origin rpy="${pi} ${pi/2} 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
+          <mesh filename="${path}/link4.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi} ${pi/2} 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
+          <mesh filename="${path}/link4.dae"/> 
         </geometry>
       </collision>
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <inertia ixx="5" ixy="0.0" ixz="0.0" iyy="5" iyz="0.0" izz="5"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
 
     <link name="link5" >
       <inertial>
-        <mass value="10"/>
-        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -153,18 +153,18 @@
       <visual>
         <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
+          <mesh filename="${path}/link4_1.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
+          <mesh filename="${path}/link4_1.dae"/> 
         </geometry>
       </collision>
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
       </inertial>
     </link >
     
@@ -172,25 +172,25 @@
       <visual>
         <origin rpy="${pi} ${pi/2} ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
+          <mesh filename="${path}/link4_2.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi} ${pi/2} ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
+          <mesh filename="${path}/link4_2.dae"/> 
         </geometry>
       </collision>
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
       </inertial>
     </link >
 
     <link name="link4_3_artificial" >
       <inertial>
         <mass value="10"/>
-        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
       </inertial>
     </link >
 
@@ -198,21 +198,21 @@
       <visual>
         <origin rpy="0 0 0.12" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_3.dae"/> 
+          <mesh filename="${path}/link4_3.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0.12" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_3.dae"/> 
+          <mesh filename="${path}/link4_3.dae"/> 
         </geometry>
       </collision>
       <inertial>
         <mass value="1000"/>
-        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        <inertia ixx="40" ixy="0.0" ixz="0.0" iyy="40" iyz="0.0" izz="20"/>
       </inertial>
-    </link >
-   -->
+    </link > -->
+  
 
     <!-- Joints Declaration -->
     <joint name="dummy_joint" type="fixed">
@@ -224,7 +224,7 @@
     <joint name="joint1" type="revolute">
       <parent link="base_link"/>
       <child link="link1"/>
-      <limit effort="100.0" lower="${-175*pi/180}" upper="${175*pi/180}" velocity="${60*pi/180}"/>
+      <limit effort="100000.0" lower="${-175*pi/180}" upper="${175*pi/180}" velocity="${60*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 0 0.2645" rpy="0 0 0" />
       <dynamics damping="0.5" friction="0.0"/>
@@ -233,7 +233,7 @@
     <joint name="joint2" type="revolute">
       <parent link="link1"/>
       <child link="link2"/>
-      <limit effort="100.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
+      <limit effort="1000000.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0.21938 0.1675 0.332" rpy="${pi/2} 0 0" />
       <dynamics damping="0.5" friction="0.0"/>
@@ -242,7 +242,7 @@
     <joint name="joint3" type="revolute">
       <parent link="link2"/>
       <child link="link3"/>
-      <limit effort="100.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
+      <limit effort="1000000.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 1.100 0" rpy="0 0 0" />
       <dynamics damping="0.5" friction="0.0"/>
@@ -258,7 +258,7 @@
 
     <xacro:mimic_joint_plugin_gazebo name_prefix="joint4_artificial"
     parent_joint="joint2" mimic_joint="joint4_artificial"
-    has_pid="false" multiplier="-1.0" max_effort="10.0" />
+    has_pid="false" multiplier="-1.0" max_effort="10.0" robot_namespace="/robot" />
 
     <joint name="joint4" type="continuous">
       <mimic joint="joint3" multiplier="-1" offset="0" />
@@ -271,13 +271,13 @@
 
     <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
     parent_joint="joint3" mimic_joint="joint4"
-    has_pid="false" multiplier="-1.0" max_effort="10.0" />
+    has_pid="false" multiplier="-1.0" max_effort="10.0" robot_namespace="/robot" />
 
     <joint name="joint5" type="revolute">
       <parent link="link4"/>
       <child link="link5"/>
       <axis xyz="0 0 1" />
-      <limit effort="1000.0" lower="${-360*pi/180}" upper="${360*pi/180}" velocity="${148*pi/180}"/>
+      <limit effort="10.0" lower="${-360*pi/180}" upper="${360*pi/180}" velocity="${148*pi/180}"/>
       <origin xyz="0.1718 -0.18957 0" rpy="${pi/2} 0 0" />
       <dynamics damping="0.5" friction="0.0"/>
     </joint>
@@ -290,6 +290,10 @@
       <origin xyz="-0.08421 0.06192 0.37687" rpy="-${pi/2} 0.02 0" />
     </joint>
 
+    <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
+    parent_joint="joint2" mimic_joint="joint4_1"
+    has_pid="false" multiplier="-1.0" max_effort="10.0"  robot_namespace="/robot"/>
+
     <joint name="joint4_2" type="continuous">
       <mimic joint="joint2" multiplier="1" offset="0" />
       <parent link="link4_1"/>
@@ -298,13 +302,21 @@
       <origin xyz="0.010 -1.100 -0.0245" rpy="0 0 -0.15" />
     </joint>
 
+    <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
+    parent_joint="joint2" mimic_joint="joint4_2"
+    has_pid="false" multiplier="1.0" max_effort="10.0" robot_namespace="/robot" />
+
     <joint name="joint4_3_artificial" type="continuous">
-      <mimic joint="joint2" multiplier="-1" offset="0" />
+      <mimic joint="joint2" multiplier="-1" offset="0"  />
       <parent link="link4_2"/>
       <child link="link4_3_artificial"/>
       <axis xyz="0 0 1" />
       <origin xyz="0.58329 0 -0.070" rpy="0 0 0" />
     </joint>
+
+    <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
+    parent_joint="joint2" mimic_joint="joint4_3_artificial"
+    has_pid="false" multiplier="-1.0" max_effort="10.0" robot_namespace="/robot"/>
 
     <joint name="joint4_3" type="continuous">
       <mimic joint="joint3" multiplier="-1" offset="0" />
@@ -312,13 +324,17 @@
       <child link="link4_3"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 0 0" rpy="0 0 0" />
-    </joint> -->
+    </joint>
+
+    <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
+    parent_joint="joint3" mimic_joint="joint4_3"
+    has_pid="false" multiplier="-1.0" max_effort="10.0" robot_namespace="/robot"/> -->
 
     <!-- Transmission -->
+    <!-- Gazebo control plugin -->
     <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
         <robotNamespace>/robot</robotNamespace>
-        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       </plugin>
     </gazebo>
 
@@ -326,10 +342,10 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="motor1">
         <mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="joint1">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
     </transmission>
 
@@ -337,10 +353,10 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="motor2">
         <mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="joint2">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
     </transmission>
 
@@ -348,10 +364,10 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="motor3">
         <mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="joint3">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
     </transmission>
 
@@ -359,10 +375,10 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="motor5">
         <mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="joint5">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
     </transmission>
 

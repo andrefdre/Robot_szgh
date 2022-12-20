@@ -20,6 +20,8 @@
     </gazebo>
   </xacro:macro>
 
+   <xacro:property name="path" value="/media/andre/Andre/robot_mesh" />
+
     <!-- <xacro:property name="pi" value="3.14" /> -->
     <link name="dummy_link" > 
     </link >
@@ -28,13 +30,13 @@
         <visual>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
-              <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/> 
+              <mesh filename="${path}/base_link.dae"/> 
             </geometry>
           </visual>
           <collision>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
-              <!-- <mesh filename="file://$(find robot_bringup)/robot_mesh/base_link.dae"/>  -->
+              <!-- <mesh filename="${path}/base_link.dae"/>  -->
               <box size="0.3 0.3 0.3"/>
             </geometry>
           </collision>
@@ -57,13 +59,13 @@
       <visual>
         <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
+          <mesh filename="${path}/link1.dae"/> 
         </geometry>
       </visual>
       <!-- <collision>
         <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link1.dae"/> 
+          <mesh filename="${path}/link1.dae"/> 
         </geometry>
       </collision> -->
       <inertial>
@@ -77,13 +79,13 @@
       <visual>
         <origin rpy="-${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
+          <mesh filename="${path}/link2.dae"/> 
         </geometry>
       </visual>
       <!-- <collision>
         <origin rpy="-${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link2.dae"/> 
+          <mesh filename="${path}/link2.dae"/> 
         </geometry>
       </collision> -->
       <inertial>
@@ -97,13 +99,13 @@
       <visual>
         <origin rpy="${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
+          <mesh filename="${path}/link3.dae"/> 
         </geometry>
       </visual>
       <!-- <collision>
         <origin rpy="${pi/2} 0 ${pi}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link3.dae"/> 
+          <mesh filename="${path}/link3.dae"/> 
         </geometry>
       </collision> -->
       <inertial>
@@ -125,13 +127,13 @@
       <visual>
         <origin rpy="${pi} ${pi/2} 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
+          <mesh filename="${path}/link4.dae"/> 
         </geometry>
       </visual>
       <!-- <collision>
         <origin rpy="${pi} ${pi/2} 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4.dae"/> 
+          <mesh filename="${path}/link4.dae"/> 
         </geometry>
       </collision> -->
       <inertial>
@@ -153,13 +155,13 @@
       <visual>
         <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
+          <mesh filename="${path}/link4_1.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_1.dae"/> 
+          <mesh filename="${path}/link4_1.dae"/> 
         </geometry>
       </collision>
       <inertial>
@@ -172,13 +174,13 @@
       <visual>
         <origin rpy="${pi} ${pi/2} ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
+          <mesh filename="${path}/link4_2.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi} ${pi/2} ${pi/2}" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_2.dae"/> 
+          <mesh filename="${path}/link4_2.dae"/> 
         </geometry>
       </collision>
       <inertial>
@@ -198,13 +200,13 @@
       <visual>
         <origin rpy="0 0 0.12" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_3.dae"/> 
+          <mesh filename="${path}/link4_3.dae"/> 
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0.12" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find robot_bringup)/robot_mesh/link4_3.dae"/> 
+          <mesh filename="${path}/link4_3.dae"/> 
         </geometry>
       </collision>
       <inertial>
