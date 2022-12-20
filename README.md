@@ -158,13 +158,13 @@ Project Link: [https://github.com/andrefdre/Robot_szgh](https://github.com/andre
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/andrefdre/Robot_szgh.svg?style=for-the-badge
 [contributors-url]: https://github.com/andrefdre/Robot_szgh/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/andrefdre/Robot_szgh.svg?style=for-the-badge
 [forks-url]: https://github.com/andrefdre/Robot_szgh/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/andrefdre/Robot_szgh.svg?style=for-the-badge
 [stars-url]: https://github.com/andrefdre/Robot_szgh/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/andrefdre/Robot_szgh.svg?style=for-the-badge
 [issues-url]: https://github.com/andrefdre/Robot_szgh/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/andrefdre/Robot_szgh.svg?style=for-the-badge
 [license-url]: https://github.com/andrefdre/Robot_szgh/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/andr%C3%A9-cardoso-8bb264223/
