@@ -20,7 +20,8 @@
     </gazebo>
   </xacro:macro>
 
-    <!-- <xacro:property name="pi" value="3.14" /> -->
+    <xacro:property name="path" value="model://" />
+
     <link name="dummy_link" > 
       
     </link >
