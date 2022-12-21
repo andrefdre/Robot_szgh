@@ -23,3 +23,7 @@ robot:
     joint: joint5
     pid: {p: 2000.0, i: 100, d: 500.0}
 
+  joint5_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint6_1
+    pid: {p: 2000.0, i: 100, d: 500.0}

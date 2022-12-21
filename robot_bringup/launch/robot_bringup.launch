@@ -8,6 +8,7 @@
   <arg name="rviz" default="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find robot_bringup)/config/world.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -20,15 +21,20 @@
 
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg name) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" output='screen' />
 
-  <rosparam file="$(find robot_bringup)/config/config.yaml" command="load"/>
+  <rosparam file="$(find robot_bringup)/config/config_trajectory.yaml" command="load"/>
 
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="robot"
+  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="robot"
   output="screen"
   args="joint_state_controller
         joint1_position_controller
         joint2_position_controller
         joint3_position_controller
-        joint4_position_controller"/>
+        joint4_position_controller
+        joint5_position_controller"/> -->
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="robot"
+  output="screen"
+  args="joint_state_controller arm_controller grip_controller"/>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
     <remap from="/joint_states" to="/robot/joint_states" />

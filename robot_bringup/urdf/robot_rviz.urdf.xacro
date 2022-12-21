@@ -20,7 +20,7 @@
     </gazebo>
   </xacro:macro>
 
-   <xacro:property name="path" value="/media/andre/Andre/robot_mesh" />
+  <xacro:property name="path" value="~/../../media/andre/Andre/robot_mesh" />
 
     <!-- <xacro:property name="pi" value="3.14" /> -->
     <link name="dummy_link" > 
@@ -30,7 +30,7 @@
         <visual>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
             <geometry>
-              <mesh filename="${path}/base_link.dae"/> 
+              <mesh filename="~/../../media/andre/Andre/robot_mesh/base_link.dae"/> 
             </geometry>
           </visual>
           <collision>
@@ -147,6 +147,47 @@
       <inertial>
         <mass value="10"/>
         <inertia ixx="0.004" ixy="0.0" ixz="0.0" iyy="0.004" iyz="0.0" izz="0.002"/>
+      </inertial>
+      <selfCollide>false</selfCollide>
+    </link >
+
+    <link name="link6_1" >
+      <visual>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      <selfCollide>false</selfCollide>
+    </link >
+
+
+    <link name="link6_2" >
+      <visual>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
       </inertial>
       <selfCollide>false</selfCollide>
     </link >
@@ -278,6 +319,31 @@
       <limit effort="1000.0" lower="${-360*pi/180}" upper="${360*pi/180}" velocity="${148*pi/180}"/>
       <origin xyz="0.1718 -0.18957 0" rpy="${pi/2} 0 0" />
     </joint>
+
+    <joint name="joint6_1" type="prismatic">
+      <parent link="link5"/>
+      <child link="link6_1"/>
+      <axis xyz="0 1 0" />
+      <limit effort="10.0" lower="-0.05" upper="0.15" velocity="${148*pi/180}"/>
+      <origin xyz="0 0.05 0.1" rpy="0 0 0" />
+      <dynamics damping="0.5" friction="0.0"/>
+    </joint>
+
+    
+
+    <joint name="joint6_2" type="prismatic">
+      <mimic joint="joint6_1" multiplier="-1" offset="0" />
+      <parent link="link5"/>
+      <child link="link6_2"/>
+      <axis xyz="0 1 0" />
+      <limit effort="10.0" lower="-0.05" upper="0.15" velocity="${148*pi/180}"/>
+      <origin xyz="0 -0.05 0.1" rpy="0 0 0" />
+      <dynamics damping="0.5" friction="0.0"/>
+    </joint>
+
+    <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
+    parent_joint="joint6_1" mimic_joint="joint6_2"
+    has_pid="false" multiplier="-1.0" max_effort="10.0" />
 
     <joint name="joint4_1" type="continuous">
       <mimic joint="joint2" multiplier="-1" offset="0" />

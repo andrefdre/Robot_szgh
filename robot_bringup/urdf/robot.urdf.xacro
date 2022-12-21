@@ -149,6 +149,85 @@
       <selfCollide>false</selfCollide>
     </link >
 
+    <link name="link6_1" >
+      <visual>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1</mu>
+            <mu2>1</mu2>
+          </ode>
+          <torsional>
+            <ode/>
+          </torsional>
+        </friction>
+        <contact>
+          <ode>
+            <kp>1e+07</kp>
+            <kd>1</kd>
+            <min_depth>0.001</min_depth>
+            <max_vel>0.1</max_vel>
+          </ode>
+        </contact>
+        <bounce/>
+      </surface>
+    </link >
+
+
+    <link name="link6_2" >
+      <visual>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
+        <geometry>
+          <cylinder radius="0.02" length="0.2"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1</mu>
+            <mu2>1</mu2>
+          </ode>
+          <torsional>
+            <ode/>
+          </torsional>
+        </friction>
+        <contact>
+          <ode>
+            <kp>1e+07</kp>
+            <kd>1</kd>
+            <min_depth>0.001</min_depth>
+            <max_vel>0.1</max_vel>
+          </ode>
+        </contact>
+        <bounce/>
+      </surface>
+    </link >
+
     <!-- <link name="link4_1" >
       <visual>
         <origin rpy="${pi} ${pi/2} 0.261" xyz="0 0 0"/>
@@ -282,6 +361,31 @@
       <dynamics damping="0.5" friction="0.0"/>
     </joint>
 
+    <joint name="joint6_1" type="prismatic">
+      <parent link="link5"/>
+      <child link="link6_1"/>
+      <axis xyz="0 1 0" />
+      <limit effort="100.0" lower="-0.05" upper="0.15" velocity="${148*pi/180}"/>
+      <origin xyz="0 0.05 0.1" rpy="0 0 0" />
+      <dynamics damping="0.5" friction="5.0"/>
+    </joint>
+
+    
+
+    <joint name="joint6_2" type="prismatic">
+      <mimic joint="joint6_1" multiplier="-1" offset="0" />
+      <parent link="link5"/>
+      <child link="link6_2"/>
+      <axis xyz="0 1 0" />
+      <limit effort="100.0" lower="-0.05" upper="0.15" velocity="${148*pi/180}"/>
+      <origin xyz="0 -0.05 0.1" rpy="0 0 0" />
+      <dynamics damping="0.5" friction="5.0"/>
+    </joint>
+
+    <xacro:mimic_joint_plugin_gazebo name_prefix="joint4"
+    parent_joint="joint6_1" mimic_joint="joint6_2"
+    has_pid="false" multiplier="-1.0" max_effort="100.0" />
+
     <!-- <joint name="joint4_1" type="continuous">
       <mimic joint="joint2" multiplier="-1" offset="0" />
       <parent link="link1"/>
@@ -378,6 +482,17 @@
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="joint5">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+    </transmission>
+
+    <transmission name="tran5">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="motor6">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </actuator>
+      <joint name="joint6_1">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
     </transmission>
