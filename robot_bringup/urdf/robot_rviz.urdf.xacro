@@ -155,13 +155,14 @@
       <visual>
         <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
         <geometry>
-          <cylinder radius="0.02" length="0.2"/>
+          <!-- <cylinder radius="0.02" length="0.2"/> -->
+          <box size="0.05 0.02 0.2" />
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
         <geometry>
-          <cylinder radius="0.02" length="0.2"/>
+          <box size="0.05 0.02 0.2" />
         </geometry>
       </collision>
       <inertial>
@@ -176,13 +177,13 @@
       <visual>
         <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
         <geometry>
-          <cylinder radius="0.02" length="0.2"/>
+          <box size="0.05 0.02 0.2" />
         </geometry>
       </visual>
       <collision>
         <origin rpy="${pi} ${pi/2} 0" xyz="0.1 0 0"/>
         <geometry>
-          <cylinder radius="0.02" length="0.2"/>
+          <box size="0.05 0.02 0.2" />
         </geometry>
       </collision>
       <inertial>
@@ -275,17 +276,19 @@
     <joint name="joint2" type="revolute">
       <parent link="link1"/>
       <child link="link2"/>
-      <limit effort="100.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
+      <limit effort="1000000.0" lower="${-80*pi/180}" upper="${25*pi/180}" velocity="${148*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0.21938 0.1675 0.332" rpy="${pi/2} 0 0" />
+      <dynamics damping="0.5" friction="0.0"/>
     </joint>
   
     <joint name="joint3" type="revolute">
       <parent link="link2"/>
       <child link="link3"/>
-      <limit effort="100.0" lower="${-25*pi/180}" upper="${80*pi/180}" velocity="${148*pi/180}"/>
+      <limit effort="1000000.0" lower="${-80*pi/180}" upper="${25*pi/180}" velocity="${148*pi/180}"/>
       <axis xyz="0 0 1" />
       <origin xyz="0 1.100 0" rpy="0 0 0" />
+      <dynamics damping="0.5" friction="0.0"/>
     </joint>
 
     <joint name="joint4_artificial" type="continuous">
