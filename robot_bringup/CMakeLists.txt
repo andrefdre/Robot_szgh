@@ -10,7 +10,7 @@ project(robot_bringup)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
-  std_msg
+  std_msgs
   tf
 )
 
